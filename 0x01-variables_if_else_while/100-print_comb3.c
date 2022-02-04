@@ -13,15 +13,12 @@ int main(void)
 	{
 	for (j = (d + 1); j <= 9; j++)
 	{
-	if (d != j)
-	{
 	putchar(d + '0');
 	putchar(j + '0');
 	if (d != 8 || j != 9)
 	{
 	putchar(',');
 	putchar(' ');
-	}
 	}
 	}
 	}
