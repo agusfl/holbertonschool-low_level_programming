@@ -1,43 +1,36 @@
 #include <stdio.h>
 
 /**
- *main - print a num pair 
- *Return: Always 0 (Success)
+ *main - print a message with printf
+ *
+ *Return: end program
  */
-
 int main(void)
 {
-	int tens;
-	int ones;
-	int t;
-	int o;
+	int d, j, k, s;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print first two digit combo*/
-	{
-		for (ones = '0'; ones <= '9'; ones++)
+	for (d = 0; d <= 9; d++)
 		{
-		 	for (t = tens; t <= '9'; t++) /*print second of pair*/
+		for (j = 0; j <= 9; j++)
 			{
-				for (o = ones + 1; o <= '9'; o++)
+			for (k = d; k <= 9; k++)
 				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(t);
-					putchar(o);
-
-					if (!((tens == '9' && ones == '8') &&
-					      (t == '9' && o == '9')))
+				for (s = j + 1; s <= 9; s++)
 					{
-						putchar(',');
-						putchar(' ');
+					putchar(d + '0');
+					putchar(j + '0');
+					putchar(' ');
+					putchar(k + '0');
+					putchar(s + '0');
+					if (!((d == 9 && j == 8) && (k == 9 && s == 9)))
+					{
+					putchar(',');
+					putchar(' ');
+					}
 					}
 				}
-				o = '0';
 			}
 		}
-	}
-	putchar('\n');
-
-	return (0);
+		putchar('\n');
+		return (0);
 }
