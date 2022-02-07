@@ -7,19 +7,23 @@
 
 int main(void)
 {
-	int n1, n2, n3, i;
+	long int n1, n2, n3;
+	int i;
 
-	n1 = 0;
-	n2 = 1;
+	n1 = 1;
+	n2 = 2;
+	n3 = 0;
 
-	printf("%d, %d ,", n1, n2);
-	for (i = 2; i < 50; i++)
+	printf("1, 2, ");
+	for (i = 0; i < 47; i++)
 	{
 		n3 = n1 + n2;
-		printf("%d ,", n3);
+		printf("%ld ,", n3);
 		n1 = n2;
 		n2 = n3;
 	}
+	n3 = n1 + n2;
+	printf("%ld\n", n3);
 	return (0);
 }
 
