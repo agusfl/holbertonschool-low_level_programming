@@ -1,16 +1,4 @@
-#include <stdio.h>
-
-/**
- *main -code
- *
- *Return: always 0
-*/
-void print_alphabet_x10(void);
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
-}
+#include "main.h"
 
 /**
  *print_alphabet_x10 -code
@@ -25,7 +13,7 @@ void print_alphabet_x10(void)
 	for (x10 = 0; x10 <= 9; x10++)
 	{
 	for (ch = 'a'; ch <= 'z'; ch++)
-	putchar(ch);
-	putchar('\n');
+	_putchar(ch);
+	_putchar('\n');
 	}
 }
