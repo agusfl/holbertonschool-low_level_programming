@@ -13,7 +13,7 @@ int main(void)
 	{
 		if ((i % 3 == 0) || (i % 5 == 0))
 		{
-			suma += i;
+			suma = suma + i;
 		}
 	}
 	printf("%d\n", suma);
