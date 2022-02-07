@@ -1,21 +1,28 @@
 #include "main.h"
 
 /**
- * print_last_digit - checks for lowercase character
- * @n: character to check
- * Return: comment
+ * jack_bauer - print every minute of a day
+ * Description: print minutes of the day
  */
 
 void jack_bauer(void)
 {
-	int h, m;
+	int hours = 0;
+	int min = 0;
 
-	for (h = 0; h <= 24; h++)
+	while (hours < 24)
 	{
-		for (m = 0; m <= 60; m++)
+		while (min < 60)
 		{
-			putchar(h + m);
+			_putchar('0' + (hours / 10));
+			_putchar('0' + (hours % 10));
+			_putchar(':');
+			_putchar('0' + (min / 10));
+			_putchar('0' + (min % 10));
+			_putchar('\n');
+			min++;
 		}
+		min = 0;
+		hours++;
 	}
-	return (0);
 }
