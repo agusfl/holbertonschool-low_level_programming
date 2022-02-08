@@ -32,8 +32,12 @@ void print_remaining_days(int month, int day, int year)
 		}
 		else
 		{
-			printf("Day of the year: %d\n", day);
-			printf("Remaining days: %d\n", 365 - day);
+		printf("Day of the year: %d\n", day); /**
+							*en la funcion de "convert_day" toman febrero con 28 dias
+							*por eso es que el ejemlpo de la fecha: 29/2/2000 entra
+							*en esta parte del else, ya que seria mes 2 y < a 60 dias
+							*/
+		printf("Remaining days: %d\n", 365 - day);
 		}
 	}
 }
