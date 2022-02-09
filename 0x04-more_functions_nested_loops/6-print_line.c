@@ -14,10 +14,6 @@ void print_line(int n)
 	{
 		for (largo = 0; largo <= n; largo++)
 		_putchar('_');
-		_putchar('\n');
 	}
-	else
-	{
 	_putchar('\n');
-	}
 }
