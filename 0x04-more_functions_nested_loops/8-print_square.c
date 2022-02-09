@@ -18,7 +18,11 @@ void print_square(int size)
 			for (column = 0; column < size; column++)
 				_putchar('#');
 			if (row == size - 1)
-				continue;
+				continue;/**el continue lo que hace es saltear el ciclo del for
+					   *en la ultima fila del cuadrado
+					   *osea en la fila 10 si el size es 10 saltea
+					   *el espacio y pasa al proximo cuadrado que le pasen
+					   */
 			_putchar('\n');
 		}
 	}
