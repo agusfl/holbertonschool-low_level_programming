@@ -17,13 +17,7 @@ void more_numbers(void)
 	{
 	if (i > 9)
 		_putchar((i / 10) + '0');
-	_putchar((i % 10) + '0'); /**
-				    * esto lo que hace es imprimir en el primir putchar
-				    * si es mayor a 9 y sino pasa al segundo
-				    * donde se queda con el modulo de 10 que
-				    * seria el ultimo caracter y en un solo numero
-				    * es el mismo numero por eso imprime bien
-				    */
+	_putchar((i % 10) + '0');
 	}
 	_putchar('\n');
 	}
