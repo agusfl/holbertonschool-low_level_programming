@@ -8,15 +8,14 @@
 
 int _strlen(char *s)
 {
-	int len = 0;
+	int i = 0;
 
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		len++;
-		s++;
+		i++;
 	}
 
-	return (len);
+	return (i);
 }
 
 /**
@@ -27,14 +26,19 @@ int _strlen(char *s)
 void rev_string(char *s)
 {
 	int i = 0;
-	int j = (_strlen(s) - 1);
+	int rev = (_strlen(s) - 1);
 	char temp;
 
-	while (i < j)
+	while (i < rev)
 	{
+		/**
+		 * en las proximas lineas de codigo se usa una variable temporal
+		 * para pasar de a una letra del string que se quiera mostrar de forma
+		 * inversa, de esta forma queda el string dado vuelta.
+		 */
 		temp = s[i];
-		s[i] = s[j];
-		s[j] = temp;
-		i++, j--;
+		s[i] = s[rev];
+		s[rev] = temp;
+		i++, rev--;
 	}
 }
