@@ -1,1 +1,1 @@
-This is a repository for low level programming in C.
+This is a repository for low level programming in C. This is fun.
