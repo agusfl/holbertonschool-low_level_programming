@@ -32,10 +32,13 @@ char *cap_string(char *str)
 	return (str);
 	/**
 	 * Hago un while para que siempre que el string sea distinto del
-	 * caracter nulo.Se pone un if que compruebe si se cumple
+	 * caracter nulo. Se pone un if que compruebe si se cumple
 	 * con las condiciones de que es minuscula y que el caracter
 	 * anterior es uno de los caracteres que el
 	 * ejercicio pide que haya una mayuscula despues de ellos.
 	 * Si se cumplen esas dos condiciones paso la primer letra a mayuscula.
+	 * Ejemplo, si el caracter es minuscula y el caracter anterior (i -1)
+	 * es un punto o un espacio o una coma o ; o comillas, etc..
+	 * se va a poner una mayuscula en ese caracter.
 	 */
 }
