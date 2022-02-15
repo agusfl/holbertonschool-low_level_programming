@@ -20,7 +20,10 @@ void reverse_array(int *a, int n)
 		inicio++, fin--;
 
 		/**
-		 * el primer tmp iguala al puntero de a y la posicion en
+		 * fin se define como n - 1 para omitir el valor null y
+		 * pasar a la ultima posicion para mostrar el array
+		 * al revez.
+		 * El primer tmp iguala al puntero de a y la posicion en
 		 * la que se encuentra, por eso (a * inicio) seria
 		 * posicion cero del array a en la primer iteracion
 		 * posicion 1 del array a en la segunda iteracion y asi
