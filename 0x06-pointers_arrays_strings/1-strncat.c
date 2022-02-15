@@ -37,4 +37,11 @@ char *_strncat(char *dest, char *src, int n)
 		dest[i] = src[s];
 	}
 	return (dest);
+	/**
+	 * La diferencia de este ej con el 0 task es que hay que indicar
+	 * que imprima el segundo character menor a lo que se indique con "n"
+	 * por lo tanto va a imprimir siempre que src[s] y s sean menores a n.
+	 * no es necesario agregar el null character como en el ej anterior
+	 * por eso lo elimine.
+	 **/
 }
