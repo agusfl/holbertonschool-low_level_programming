@@ -8,16 +8,19 @@
 
 void print_number(int n)
 {
-	unsigned int un, count, i;
+	unsigned int dec, count, i;
 	/**
-	 * declaramos a "un" como unsigned int
+	 * declaramos a "dec", "i" y "count" como unsigned int
 	 * para tener mas espacio en memoria.
+	 * "dec" seria por: decremento y "count"
+	 * por contador para ver las posiciones.
 	 */
 
 	if (n < 0)
 	/**
-	 * si es negativo, le imprimimos el signo de negativo
-	 * y pasamos i a negativo.
+	 * si es negativo, le imprimimos el signo de negativo con el putchar
+	 * y pasamos i a positivo para quedarnos con el numero que nos pasan
+	 * en positivo para lo que sigue del codigo.
 	 */
 	{
 		_putchar('-');
@@ -25,22 +28,16 @@ void print_number(int n)
 	}
 	else
 		i = n;
-	/* si el valor es positivo que imprima el mismo valor*/
-
-	un = i;
 	/**
-	 * declaramos un como i, esto es para tener una variable con
-	 * mas espacio.
+	 * si el valor es positivo que imprima el mismo valor, pasamos "i" a
+	 * "n" para tener mas espacio en memoria por si el "n" que nos pasan
+	 * es muy grande.
 	 */
-	count = 1; /* declaramos a count como mayor a cero */
-
-	while (un > 9)
-	/**
-	 * se pone mayor a 9 ya que ya se analizaron los casos de 1 digito
-	 * por lo tanto ahora se analizan los casos de 2 digitos o mas.
-	 */
+	dec = i;
+	count = 1;
+	while (dec > 9)
 	{
-		un /= 10;
+		dec /= 10;
 		count *= 10;
 	}
 	for (; count >= 1; count /= 10)
