@@ -1,0 +1,36 @@
+#include "main.h"
+
+/**
+ * *_strchr - locates a character in a string
+ * @s: string
+ * @c: character
+ * Return: pointer to the first occurence
+ */
+
+char *_strchr(char *s, char c)
+{
+
+	while (*s)
+	/**
+	 * esto recorre s hasta que se termine el string, es lo mismo que
+	 * poner *s != '\0'
+	 */
+	{
+		if (*s != c)
+			s++; /*esto significa que vaya recorriendo s*/
+		else
+			return (s);
+	}
+	if (c == '\0')
+	/**
+	 * si el character que te pasaron para buscar es null
+	 * o no pasaron nada para que busques entonces que devuelva s que
+	 * seria el string que hay que devolver.
+	 * Se pone para que devuelva s ya que no pasaron ningun caracter para
+	 * devolver apartir de ese caracter entonces se devuelve todo l
+	 * string.
+	 */
+		return (s);
+
+	return ('\0');
+}
