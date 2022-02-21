@@ -25,7 +25,12 @@ char *_strpbrk(char *s, char *accept)
 			if (s[i] == accept[j])
 			{
 			return (s + i);
-			/*aca le decis que vaya a la posicion de s + i e imprima desde ahi*/
+			/**
+			 * aca le decis que vaya a la posicion de s + i e
+			 * imprima desde ahi. Le estas diciendo que se
+			 * posicione en el puntero s y vaya a la posicion que
+			 * marque "i".
+			 */
 			}
 		}
 	i++;/*incremento en i y s dentro del while*/
