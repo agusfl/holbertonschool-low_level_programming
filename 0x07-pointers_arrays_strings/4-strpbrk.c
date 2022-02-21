@@ -22,13 +22,13 @@ char *_strpbrk(char *s, char *accept)
 			 * itera accept
 			 */
 		{
-			if (*s == accept[j])
+			if (s[i] == accept[j])
 			{
-			return (s);
+			return (s + i);
+			/*aca le decis que vaya a la posicion de s + i e imprima desde ahi*/
 			}
 		}
 	i++;/*incremento en i y s dentro del while*/
-	s++;
 	}
 	return ('\0');
 	/*Retorna null en caso que no se encuentre coincidencia*/
