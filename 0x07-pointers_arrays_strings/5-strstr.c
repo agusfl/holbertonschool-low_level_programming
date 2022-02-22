@@ -2,8 +2,8 @@
 
 /**
  * _strstr - finds first occurrence of the substring.
- * @haystack: string
- * @needle: substring
+ * @haystack: string - pajar en español
+ * @needle: substring - aguja en español
  * Return: pointer to the beginning of the located substring.
  */
 
@@ -17,28 +17,11 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (haystack[i + j] != needle[j])
 				break;
-			/**
-			 * este break hace que se saltee la suma de j++ y pase
-			 * a incrementar el i del while de "haystack", cuando
-			 * sus posiciones son distintas.
-			 */
 			j++;
 		}
 		if (needle[j] == '\0')
-			/**
-			 * aca se pregunta si el needle ya llego al caracter
-			 * null, esto se da una vez que el if de arriba deja
-			 * de cumplirse y por lo tanto se arranca a increment
-			 * ar la "j" y needle llega al caracter null,
-			 * en caso de ser asi se indica que retorne haystack +i
-			 */
 		{
 			return (haystack + i);
-			/**
-			 * se le indica que vaya a la posicion donde esta el
-			 * puntero "haystack" y se mueva a la poscion "i".
-			 * en este caso i termina en la posicion 7.
-			 */
 		}
 	i++;
 	}
