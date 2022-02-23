@@ -16,16 +16,18 @@ int prime_number(int n, int divisor)
 	 * (empezando por el numero 2, ya que los numeros primos son apartir
 	 * del 2) que es un numero primo y por lo tanto que retorne 1 como nos
 	 * pedian en las condiciones del ejercicio.
-	 * Aclaracion: un numero es divisor cuando solo es divisible por si
-	 * mismo y por uno, no puede dividrse por ningun otro numero que no
-	 * sean esos dos (si mismo y uno) y dar como resultado un numero entero
+	 * Aclaracion: un numero es primo cuando solo es divisible por si
+	 * mismo y por el uno, no puede dividrse por ningun otro numero que no
+	 * sean esos dos (el mismo y uno) y dar como resultado un numero entero
+	 * sin fraccion.
 	 */
 	else if (n % divisor == 0)
 		return (0);
 	/**
-	 * Aca chequeo que el modulo de n dividido el divisor sea cero, ya que
-	 * si pasa esto sabemos que no es un numero primo, porque tiene mas
-	 * divisores que si mismo y 1 y por lo tanto retornamos 1.
+	 * Aca chequeo que el modulo de n dividido el divisor sea cero (osea
+	 * que el resto sea cero), ya que si pasa esto sabemos que no es un
+	 * numero primo, porque tiene mas divisores que si mismo y 1 y por
+	 * lo tanto retornamos 1 (tal cual nos indican en las condiciones).
 	 */
 	return (prime_number(n, divisor + 1));
 	/**
