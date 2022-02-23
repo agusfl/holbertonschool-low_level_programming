@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pow_recrusion - returns the value of x raised to the power of y
+ * _pow_recrusion - returns the value of x raised to the power of y
  * @x: number to be raised
  * @y: power to raised
  * Return: length of a string
