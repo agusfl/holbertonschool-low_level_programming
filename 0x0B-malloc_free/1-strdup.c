@@ -40,6 +40,11 @@ char *_strdup(char *str)
 	{
 		str_copy[i] = str[i];
 	}
+	/**
+	 * No hay que agregarle un 'free' al final porque se lo pusieron ellos
+	 * en el main para ejecutar el codigo, si yo le pusiera un free aca tmb
+	 * me daria un error porque se esta queriendo liberar 2 veces.
+	 */
 
 	return (str_copy);
 }
