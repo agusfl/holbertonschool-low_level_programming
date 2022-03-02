@@ -44,10 +44,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		str_con[i] = s2[j];
 	}
-	/**
-	 * No hay que agregarle un 'free' al final porque se lo pusieron ellos
-	 * en el main para ejecutar el codigo, si yo le pusiera un free aca tmb
-	 * me daria un error porque se esta queriendo liberar 2 veces.
-	 */
+	/*No hay que agregarle un 'free' al final porque se lo pusieron ellos*/
 	return (str_con);
 }
