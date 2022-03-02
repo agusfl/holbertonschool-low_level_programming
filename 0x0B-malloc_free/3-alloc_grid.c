@@ -32,14 +32,10 @@ int **alloc_grid(int width, int height)
 			{
 				free(grid[h]);
 			}
-			/**
-			 * Liberamos memoria, porque en el main no se libera,
-			 * y como le asignamos memoria con malloc tenemos que
-			 * liberarla con free.
-			 */
+			free(grid);
 			return (NULL);
 		}
-		for (w = 0; w < width; w++) 
+		for (w = 0; w < width; w++)
 		/**
 		 * En este for hago las columnas del grid, esta dentro del
 		 * primer for para poder hacer las columnas.
