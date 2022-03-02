@@ -37,9 +37,10 @@ int **alloc_grid(int width, int height)
 			}
 			free(grid);
 			/**
-			 * Liberamos memoria, porque en el main no se libera,
+			 * Liberamos memoria, porque en el main no se libera como en los otros ejs,
 			 * y como le asignamos memoria con malloc tenemos que
-			 * liberarla con free.
+			 * liberarla con free, para poder usarla. Despues con el ejercicio
+			 * 4 es donde liberas la memoria usada en este ejercicio (task 3)..
 			 */
 			return (NULL);
 		}
