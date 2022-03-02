@@ -8,10 +8,16 @@
 
 void free_grid(int **grid, int height)
 {
-	int i;
+	int h;
 
 	free(grid);
 
-	for (i = 0; i < height; i++)
-		free(grid[i]);
+	for (h = 0; h < height; h++)
+		free(grid[h]);
+	/**
+	 * Con el free voy recorriendo todo el two dimensional array ya que
+	 * indicandole [h] va recorriendo fila a fila pasando por todas las
+	 * columnas y lo va liberando.
+	 * Y con el free (grid) se libera el puntero.
+	 */
 }
