@@ -6,7 +6,7 @@
  * @av: argument vector
  * Return: pointer to a new string or NULL if fails
  */
-
+int _strlen(char *s);
 char *argstostr(int ac, char **av)
 {
 	int length = 0, i = 0, j = 0, k = 0;
@@ -15,7 +15,6 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL) /* dato de letra */
 		return (NULL);
 
-	/* find length to malloc */
 	for (i = 0; i < ac; i++)
 	{
 		length += _strlen(av[i]);
@@ -25,7 +24,7 @@ char *argstostr(int ac, char **av)
 	 * sumo espacio para el '\0' y nuevas lineas
 	 */
 
-	s = malloc(len * sizeof(char));
+	s = malloc(length * sizeof(char));
 
 	if (s == NULL)
 	{
