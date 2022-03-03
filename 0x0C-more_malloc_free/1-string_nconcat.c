@@ -45,7 +45,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	 * Calculo largo a concatenar, incluyendo un espacio (+1) para el null
 	 * caracter (como pide la letra).
 	 */
-	str_con = malloc(sizeof(*str_con) * len);
+	str_con = malloc(sizeof(char) * len);
 
 	if (str_con == NULL)
 	{
