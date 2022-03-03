@@ -49,6 +49,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	 * void, ya que no sabes que tipo de array te van a pasar, se pasa a
 	 * char porque en el 2-main se puede ver que el array que usan es un
 	 * puntero al tipo de dato: char llamado a.
+	 * Se desreferrencia el puntero casteandolo a char por lo que ya se explico y
+	 * se le dice que vaya al array 'arr' y que se posicione en la posicion 'i' y que
+	 * vaya igualando a cero a medida que el 'i' incrementa.
 	 */
 	return (arr);
 }
