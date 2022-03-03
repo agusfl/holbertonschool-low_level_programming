@@ -30,9 +30,9 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < len; i++)
+	for (i = min; i <= len; i++)
 	{
-		arr[i] = min++;
+		arr[i] = i;
 	}
 	/**
 	 * En el for le indico que recorra desde el i seteado en 0
