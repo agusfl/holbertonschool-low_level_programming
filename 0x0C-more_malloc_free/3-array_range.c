@@ -17,7 +17,7 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	len = max - min + 1;
+	len = max - min;
 	/**
 	 * El largo del array va a ser: el maximo menos el minimo + 1
 	 */
@@ -30,9 +30,9 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = min; i <= len; i++)
+	for (i = 0; i <= len; i++)
 	{
-		arr[i] = i;
+		arr[i] = min++;
 	}
 	/**
 	 * En el for le indico que recorra desde el i seteado en 0
