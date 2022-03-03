@@ -1,12 +1,28 @@
 #include "main.h"
 
 /**
+ *_strlen - returns length of a string
+ * @s: string to return length
+ * Return: length of the string
+ */
+
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (s[length] != '\0')
+		length++;
+
+	return (length);
+}
+
+/**
  * argstostr - concatenates all the arguments of your program
  * @ac: argument count
  * @av: argument vector
  * Return: pointer to a new string or NULL if fails
  */
-int _strlen(char *s);
+
 char *argstostr(int ac, char **av)
 {
 	int length = 0, i = 0, j = 0, k = 0;
@@ -41,20 +57,4 @@ char *argstostr(int ac, char **av)
 	}
 
 	return (s);
-}
-
-/**
- * _strlen - returns length of a string
- * @s: string to return length
- * Return: length of the string
- */
-
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (s[length] != '\0')
-		length++;
-
-	return (length);
 }
