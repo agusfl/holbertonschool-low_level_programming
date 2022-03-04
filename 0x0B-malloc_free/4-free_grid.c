@@ -19,5 +19,8 @@ void free_grid(int **grid, int height)
 	 * indicandole [h] va recorriendo fila a fila pasando por todas las
 	 * columnas y lo va liberando.
 	 * Y con el free (grid) se libera el puntero.
+	 * En el ej 3 no se habia liberado la memoria despues de setear los
+	 * elementos del 2 dimensional array en 0, por eso es que la liberamos
+	 * ahora con este programita.
 	 */
 }
