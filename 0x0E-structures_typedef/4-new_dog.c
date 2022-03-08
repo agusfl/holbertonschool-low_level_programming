@@ -57,7 +57,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		copy_name = malloc(_strlen(name) + 1);
 		if (copy_name == NULL)
 		{
-		free(copy_name);/*Libero memoria si apunta a NULL*/
+		free(dog_copy);/*Libero memoria si apunta a NULL*/
 		return (NULL);
 		}
 		dog_copy->name = _strcpy(copy_name, name);
@@ -71,7 +71,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		copy_owner = malloc(_strlen(owner) + 1);
 		if (copy_owner == NULL)
 		{
-			free(copy_owner);/*Libero memoria si apunta a NULL*/
+			free(copy_name);/*Libero memoria si apunta a NULL*/
 			free(dog_copy);
 			return (NULL);
 		}
