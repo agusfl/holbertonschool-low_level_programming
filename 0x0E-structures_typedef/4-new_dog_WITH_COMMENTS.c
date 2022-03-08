@@ -70,7 +70,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		 * Si copy_name es nulo (osea no pasaron ningun dato) libero la memoria que habia
 		 * guardado con malloc para dog_copy ya que no voy a necesitar esa memoria porque
 		 * la estructura no esta completa ya que no pasaron un dato, entonces le digo que 
-		 * retorne NULL y salga del programa.
+		 * retorne NULL y salga del programa, como nos indican en la letra.
 		 */
 		return (NULL);
 		}
@@ -79,10 +79,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		 * Copio lo que pasen en 'name' de 'new_dog' dentro del puntero
 		 * dog_copy en la variable 'name'.
 		 */
-	}
-	else
-	{
-		dog_copy->name = NULL;/*Condicion de letra*/
 	}
 	if (owner != NULL)
 	{
@@ -95,7 +91,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		 * En este caso si owner, lo pasan como null (no pasan nada para la variable owner de la estructura)
 		 * libero la memoria que habia guardado con malloc tanto para 'copy_name' como para 'dog_copy'.
 		 * Ya que si no pusieron datos para alguna variable (member) de la estrucutura vamos a indicar
-		 * que retorne NULL.
+		 * que retorne NULL, como nos indican en la letra.
 		 */
 			return (NULL);
 		}
@@ -103,10 +99,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		/**
 		 * Idem proceso variable name pero con variable owner
 		 */
-	}
-	else
-	{
-		dog_copy->owner = NULL;
 	}
 	dog_copy->age = age;
 	/**
