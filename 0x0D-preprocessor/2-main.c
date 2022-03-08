@@ -13,5 +13,6 @@ int main(void)
 	/**
 	 * __FILE__ es una macro standard predefinida y lo que hace es expandir
 	 * el nombre del "current input file" que se le pase al programa de C.
+	 * Siempre las macro predefinidas arrancan y terminan con: __
 	 */
 }
