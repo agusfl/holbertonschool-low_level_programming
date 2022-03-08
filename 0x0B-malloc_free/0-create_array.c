@@ -17,12 +17,13 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 	/**
-	 * En el if anterior se indica que si el tamaño que nos pasan es menor
-	 * a cero que se retorne NULL.
+	 * Chequeamos si el espacio de memoria es NULL para ver que el sistmea no
+	 * este completo, en caso de que sea NULL signficia que hubo un problema y por
+	 * lo tanto le indicamos que retorne NULL.
 	 */
 	array = malloc(sizeof(char) * size);
 	/**
-	 * Calculo dinamicamente con ls funcion 'sizeof' el tamaño de un char y
+	 * Calculo dinamicamente con la funcion 'sizeof' el tamaño de un char y
 	 * lo multiplico por el tamano que nos pasen, y uso la funcion 'malloc'
 	 * para alocar la memoria en el array que creamos.
 	 */
