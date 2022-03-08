@@ -62,10 +62,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 		dog_copy->name = _strcpy(copy_name, name);
 	}
-	else
-	{
-		dog_copy->name = NULL;/*Condicion de letra*/
-	}
 	if (owner != NULL)
 	{
 		copy_owner = malloc(_strlen(owner) + 1);
@@ -76,10 +72,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 		dog_copy->owner = _strcpy(copy_owner, owner);
-	}
-	else
-	{
-		dog_copy->owner = NULL;
 	}
 	dog_copy->age = age;/*Copio variable age dentro de dog_copy*/
 	return (dog_copy);
