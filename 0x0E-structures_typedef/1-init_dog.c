@@ -18,9 +18,12 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	}
 
 	/**
-	 * Primero se valida que si d es null que salga con return ya que no
-	 * hay nada para inicializar y si no es null se inicializa con el
-	 * codigo que se indicado.
+	 * Primero se valida que si d es null que salga, como la funcion es de
+	 * tipo 'void' no se espera un return, no hay porque ponerlo, pero se
+	 * puede poner un 'return;' por fuera del if y va a estar bien tmb
+	 * porque seria como que no retorne nada. Si d es null no hay nada
+	 * para inicializar y termina el programa y si no es null se inicializa
+	 * con el codigo que indicado.
 	 * En este caso creamos una funcion llamada "init_dog" que toma como
 	 * argumentos una struct dog que toma un puntero llamado 'd' y despues
 	 * se definen los 3 members que toma la estructura d (dog) que son
