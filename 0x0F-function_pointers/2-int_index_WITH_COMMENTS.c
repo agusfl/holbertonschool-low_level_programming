@@ -30,7 +30,8 @@ int int_index(int *array, int size, int (*cmp)(int))
 		 * Recorro el la posicion 'i' del array siempre que i sea menor a 'size'
 		 * y pongo un if diciendo que si la posicion i de array es distinta de 0 que me retorne
 		 * el indice 'i' en el que haya terminado el for, se pone distinto de cero porque en la letra
-		 * del ejercicio lo indican, ya que al parecer no se quiere mostrar el numero cero.
+		 * del ejercicio lo indican, ya que al parecer no se quiere mostrar el numero cero, esto es porque
+		 * se entiende que el cero no es un numero entero ni positivo ni negativo.
 		 */
 		}
 	}
