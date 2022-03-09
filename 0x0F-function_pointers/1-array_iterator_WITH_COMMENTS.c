@@ -7,6 +7,11 @@
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
+/**
+ * Definimos una funcion llamada 'array_iterator' que recibe como argumentos: un puntero a int llamado array,
+ * una variable llamada size de tipo size_t y un puntero a funcion llamado action de tipo void y que recibe
+ * un argumento de tipo int.
+ */
 {
 	size_t i;/*size_t es un tipo de dato que representa el tamanio de un objeto, se usa con sizeof*/
 	/**
@@ -29,6 +34,10 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 		 * Esto tmb se podria hacer con puntero en lugar de indice.
 		 * Con puntero seria: action (*(array + i)) osea va hasta el array y despues
 		 * a la posicion en la que este el contador i.
+		 * En este caso con el puntero a funcion 'action' llamo a la funcion que nos pasen
+		 * en el main, en el main las funciones que pasan son: 'print_elem' y 'print_elem_hex' y las
+		 * dos son de tipo void al igual que nuestro puntero a funcion action que es de tipo void
+		 * tienen que ser si o si del mismo tipo porque sino no andaria.
 		 */
 		}
 	}
