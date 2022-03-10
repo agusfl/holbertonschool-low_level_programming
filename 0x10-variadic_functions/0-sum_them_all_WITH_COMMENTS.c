@@ -27,6 +27,15 @@ int sum_them_all(const unsigned int n, ...)
 	 * Hay que indicarle dos argumentos, la lista de va_list y el nombre de la primer variable que preceda
 	 * a los argumentos variables (...), en este caso 'n'.
 	 */
+	
+	if (n == 0)
+	{
+		return (0);
+	/**
+	 * Valido el caso de si los argumentos en n son cero, tal cual pide el ejercicio. Si pasa que los
+	 * argumetntos son cero, entonces que devuelva 0.
+	 */
+	}
 
 	for (i = 0; i < n; i++)
 	{
