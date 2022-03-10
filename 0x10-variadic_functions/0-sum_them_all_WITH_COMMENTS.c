@@ -18,7 +18,8 @@ int sum_them_all(const unsigned int n, ...)
 	va_list numbers_to_sum;
 	/**
 	 * Se declara una lista para que se pueda utilizar con las demas macros y funciones de variadic
-	 * functions, la llamo: 'numbers_to_sum'.
+	 * functions, la llamo: 'numbers_to_sum'. 'va_list' es un tipo de dato con el cual puedo declarar
+	 * a una variable, en este caso a numbers_to_sum.
 	 */
 
 	va_start(numbers_to_sum, n);
