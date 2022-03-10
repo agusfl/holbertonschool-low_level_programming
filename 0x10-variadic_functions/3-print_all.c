@@ -53,7 +53,7 @@ void print_string(va_list s)
  * @format: symbol to print
  */
 
-void print_all(const char * const format,...)
+void print_all(const char * const format, ...)
 {
 	char *separator = "";
 	int i, ii;
