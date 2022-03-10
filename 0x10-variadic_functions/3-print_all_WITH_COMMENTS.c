@@ -90,6 +90,12 @@ void print_string(va_list s)
  */
 
 void print_all(const char * const format, ...)
+	/**
+	 * 'print_all' es una funcion que recibe como argumentos un puntero constante a char llamado 'format'
+	 * y despues usamos variadi funtrions para indicarle con los (...) que puede recibir multiples
+	 * argumentos, osea tiene que recibir si o si un argumento entre comillas doblres (" ") porque format
+	 * es un string y despues puede recibir multiples o ningun argumento.
+	 */
 {
 	char *separator = "";
 	/**
@@ -124,10 +130,29 @@ void print_all(const char * const format, ...)
 		/**
 		 * Se le indican estas dos condiciones ya que hay que evaluar que el format que hayan pasado
 		 * (el: 'c', 'i', 'f', 's') no sea NULL osea que hayan pasado alguno y format[ii] distinto de
-		 * '\0' es para evaluar que este dentro de los simbolos que pusimos en la estructura creada.
+		 * '\0' es para indicarle que recorra el string que nos pasan hasta llegar al caracter
+		 * null ('\0') con el que terminan todos los strings.
+		 * Le ponemos format[ii] ya que tiene que ir iterando el string que pasen en format a medida
+		 * que incrementa el contador 'ii' que dfinimos..
 		 */
 		{
 		i = 0;
+		/**
+		 * Tengo que setear la 'i' (mi primer variable contador que defini) en cero aca dentro del
+		 * primer while ya que siempre que este por arrancar el segundo while voy a querer que esta
+		 * 'i' empiece en cero para que pueda recorrer toda la estructura symbol que cree, ya que cada
+		 * vez que el primer while hace una iteracion tengo que chequear la segunda letra para ver
+		 * si es uno de los simbolos que defini en symbol y poder indicarle la funcion correspondiente.
+		 * Ejemplo, en el 3-main.c pasan dentro de lo que seria el argumento 'format' = "ceis"
+		 * En la primer iteracion del primer while se chequea la 'c' y en el segund while se chequea
+		 * si la 'c' esta dentro de symbol y como la 'i' va incrementando para chequear si la 'c' esta o no
+		 * en la estructura, cuando va a la segunda iteracion la tengo que volver a setear en cero
+		 * para que pueda recorrer nuevamente toda la estructura, si no recorreria apartir de la posicion uno
+		 * y no de la cero como deberia ser. En la segunda se va a chequear a
+		 * la posicion format[1] ya que ii esta en uno ahora y seria la letra 'e', por eso tengo que volver
+		 * a setear mi 'i' en cero para que vuelva a recorrer todo la estructura symbol creada para ver
+		 * si el caracter que pasaron esta dentro de los que defini.
+		 */
 		while (symbol[i].s != '\0')
 		/* Le indicamos esta condicion ya que en la estructura termina con '\0' y que retonre NULL
 		 * osea recorre toda la estructura y cuando llega a '\0' signficia que el simbolo pasado
