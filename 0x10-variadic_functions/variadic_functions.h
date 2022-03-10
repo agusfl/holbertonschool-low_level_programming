@@ -19,7 +19,7 @@ void print_all(const char * const format, ...);
 
 typedef struct data_type
 {
-	char *s;
+	char s;
 	void (*fun)(va_list);
 } va_struct;
 
