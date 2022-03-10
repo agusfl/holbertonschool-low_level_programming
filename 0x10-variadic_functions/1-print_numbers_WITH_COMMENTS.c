@@ -59,6 +59,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("\n");
 		/**
 		 * Printeo el salto de linea tal cual lo indica la letra
+		 *
+		 * En el main de ellos se puede ver que el separador lo indican con " ", esto es asi porque
+		 * es de tipo char pointer, osea es un string, apunta a un espacio de memoria donde aloja la
+		 * primer letra de la cadena y lo va a recorrer hasta encontrar el '\0' (caracter null) y a los
+		 * strings se los indica con comillas dobles.
 		 */
 	}
 }
