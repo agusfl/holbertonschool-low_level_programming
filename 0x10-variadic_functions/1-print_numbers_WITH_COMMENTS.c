@@ -22,6 +22,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	 * usuario no pase ningun argumento.
 	 * En el ej anterior no decian que retornemos cero si n == 0 pero en este caso no nos indican
 	 * eso, por ese motivo decidi tomar en cuenta este caso border con el if.
+	 * Si no pasan ningun argumento, no va a entrar en el if y no se retorna nada.
 	 */
 	{
 		for (i = 1; i <= n; i++)
