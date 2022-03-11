@@ -1,15 +1,17 @@
 #include "variadic_functions.h"
 
 /**
- * Primero que nada aclaro que en el 3-main.c cuando llaman a la funcion que creamos 'print_all'
- * el primer argumento que se pasa es el separador que hay que ponerlo entre comillas como indico en el codigo mas
- * adelante, cuando se le pasa "ceis" esta bien que imprima solo: B, 3, stSchool - ya que la 'c' representaria al
+ * Primero que nada aclarar que en el 3-main.c cuando llaman a la funcion que creamos 'print_all'
+ * el primer argumento que se pasa es el 'format' que seria el simbolo del formato con el cual queremos
+ * imprimir, puede ser: 'c'(char), 'i'(integer), 'f'(float) o 's'(string). Cuando se le pasa "ceis" (como
+ * hacen en el 3-main.c) esta bien que imprima solo: B, 3, stSchool --> ya que la 'c' representaria al
  * simbolo 'c' de caracter que definimos en la estructura, la 'e' no se toma en cuenta ya que no es uno de los
- * simbolos que definimos en la estructura que creamos entonces como dice la letra se saltea ('any other char
- * should be ignored), la 'i' es de integer por eso imprime 3 y la 's' es para string --> stSchool.
+ * simbolos que definimos en la estructura que creamos, entonces como dice la letra se saltea ('any other char
+ * should be ignored), la 'i' imprime 3 y la 's' --> stSchool.
  */
 
-/*A continuacion se declaran las funciones que se van a usar en la estructura que creo mas abajo */
+/* A continuacion se declaran las funciones que se van a usar en la estructura que creo mas abajo 
+ * Todas siguen la misma logica, de usar variadic functions, utilizando va_list y va_arg */
 
 /**
  * print_char - prints a char
@@ -18,17 +20,19 @@
 
 void print_char(va_list c)
 {
-	printf("%c", va_arg(c, int));i
+	printf("%c", va_arg(c, int));
 	/**
 	 * Esta es una funcion para imprimir un char, es de tipo void y toma como argumento
-	 * a una va_list llamada c (por char), le tenes que pasar el va_list para que guarde la
-	 * informacion en la lista y se pueda acceder con funciones variadicas a las distintas macros
-	 * va_start, va_arg, va_end..
-	 * va_arg usa a va_list para ir iterando cada 'argumento' de la lista de va_list.
-	 * Para poder usar el va_arg para iterar dentro de va_list, es necesario primero inicializar
-	 * llamando a la macro va_start. Nosotros ponemos el va_start mas adelante en el codigo antes
-	 * de utilizar a la funcion print_char o cualquiera de las otras funciones definidas, todas
-	 * llevan la misma logica.
+	 * a una va_list llamada c (le puse ese nombre por el tipo de dato char), se le pasa como
+	 * argumento el va_list y luego se le indica con el 'va_arg' que acceda a la variable 'c' de tipo va_list
+	 * y que la imprima, ya que el va_arg nos permite iterar la lista de argumentos (arg) de la lista creada
+	 * con va_list. Para poder usar el va_arg para iterar dentro de va_list, es necesario primero inicializar
+	 * llamando a la macro va_start. Se inicializa el va_start mas adelante en el codigo antes
+	 * de utilizar a la funcion print_char o cualquiera de las otras funciones definidas a continuacion.
+	 * Se necesita el va_start ya que este tiene dos argumentos uno es la lista creada, en este caso seria: c
+	 * y el otro es la cantidad de argumentos que se tiene, en este caso como veremos mas adelante 'format' va
+	 * a representar a la cantidad de argumentos que se pase, como veiamos antes en el 3-main pasan "ceis" que
+	 * serian 4 argumentos.
 	 */
 }
 
@@ -67,9 +71,10 @@ void print_string(va_list s)
 	str = va_arg(s, char*);
 	/*
 	 * Creamos una variable 'str' de tipo puntero a char para que se pueda
-	 * utilizar para imprimir strings por eso es que lo igualamos a: va_arg(s, char*)
-	 * para despues utilizar 'str' cuando vayamos a imprimir con el printf y que se pueda
-	 * imprimir todo el string y no solo un caracter como con char (sin hacer un for u otro loop).
+	 * utilizar para imprimir strings por este motivo es que lo igualamos a: va_arg(s, char*)
+	 * para despues poder utilizar 'str' cuando vayamos a imprimir con el printf y que se pueda
+	 * imprimir todo el string y no solo un caracter como con un char (sin hacer un for u otro tipo 
+	 * de loop para que imprima todos los char).
 	 */
 
 	if (str == NULL)
@@ -77,7 +82,7 @@ void print_string(va_list s)
 		printf("(nil)");
 		return;
 		/**
-		 * Es necesario ponerle el return vacio aunque la funcion se de tipo void
+		 * Es necesario ponerle el return vacio aunque la funcion sea de tipo void
 		 * porque sino da error.
 		 */
 	}
@@ -91,23 +96,22 @@ void print_string(va_list s)
 
 void print_all(const char * const format, ...)
 	/**
-	 * 'print_all' es una funcion que recibe como argumentos un puntero constante a char llamado 'format'
-	 * y despues usamos variadi funtrions para indicarle con los (...) que puede recibir multiples
-	 * argumentos, osea tiene que recibir si o si un argumento entre comillas doblres (" ") porque format
-	 * es un string y despues puede recibir multiples o ningun argumento.
+	 * 'print_all' es una funcion que recibe como argumentos un puntero constante char llamado 'format'
+	 * y despues usamos variadic functions para indicarle con los tres puntos (...) que puede recibir multiples
+	 * argumentos, osea tiene que recibir si o si un argumento entre comillas dobles (" ") porque format
+	 * es un string (ya que se definio como puntero de char, se define de esta forma para poder iterar por toda
+	 * la cadena de caracteres que se pase en 'format') y despues puede recibir multiples o ningun argumento.
 	 */
 {
 	char *separator = "";
 	/**
 	 * Lo incializas como un string vacio para que en la primer iteracion no se imprima una coma
-	 * y un espacio sino que despues de imprimir el primer valor.
+	 * y un espacio sino que despues de imprimir el primer valor y que se haya realizado el primer incremento
+	 * del while que vamos a definir a continuacion.
 	 */
 	int i, ii; /*Creo dos variables para usar como contadores */
 
-	va_list list;
-	/*
-	 * Creo una variable llamada: list de tipo va_list
-	 */
+	va_list list; /* Creo una variable llamada: list de tipo va_list */
 
 	va_struct symbol[] = {
 		{'c', print_char},
@@ -116,14 +120,18 @@ void print_all(const char * const format, ...)
 		{'s', print_string},
 		{'\0', NULL}
 		};
-	/*Se crea la estructura de tipo va_struct (la defini en el header) con los simnolos y su correspondiente
-	 * funcion.
+	/*Se crea la estructura de tipo va_struct (la declare en el header) con los simbolos para elegir el formato
+	 * con el cual se quiere imprmir y su correspondiente funcion como segundo miembro, si se ve en el 
+	 * header 'variadic_functions.h' el tipo de dato de esta estructura es por un lado un char llamado 's' y
+	 * su segundo y ultimo miembro es una funcion de punteros que toma como argumento la 'va_list' que fuimos
+	 * creando al definir las funciones de mas arriba (esto es gracias a function pointer, tema visto el dia
+	 * anterior), esta function pointer nos permite acceder a las distintas funciones que habiamos creado.
 	 */
 
 	va_start(list, format);
-	/* Incializo la lista con va_start para poder acceder a las variadic functions como va_arg 
-	 * Se le indica por un lado la lista creada con va_list y el otro argumento es el tipo de dato
-	 * el cual le indico 'format' ya que el tipo de dato varia dependiendo lo que elija el usuario. */
+	/* Incializo la lista con va_start para poder acceder a las variadic functions como va_arg (tal cual se
+	 * habia comentado anteriormente). Se le indica como primer argumento la lista creada con va_list y como
+	 * segundo argumento 'format' que como ya se comento seria el formato con el cual se va a imprimir. */
 
 	ii = 0; /* Seteo en cero a mi variable contador ii */
 	while (format != NULL && format[ii] != '\0')
@@ -131,9 +139,9 @@ void print_all(const char * const format, ...)
 		 * Se le indican estas dos condiciones ya que hay que evaluar que el format que hayan pasado
 		 * (el: 'c', 'i', 'f', 's') no sea NULL osea que hayan pasado alguno y format[ii] distinto de
 		 * '\0' es para indicarle que recorra el string que nos pasan hasta llegar al caracter
-		 * null ('\0') con el que terminan todos los strings.
-		 * Le ponemos format[ii] ya que tiene que ir iterando el string que pasen en format a medida
-		 * que incrementa el contador 'ii' que dfinimos..
+		 * null ('\0') con el que terminan todos los strings. 
+		 * Le ponemos format[ii] ya que tiene que ir iterando el string que pasen en 'format' a medida
+		 * que incrementa el contador definido como: 'ii' utilizado en el primer while..
 		 */
 		{
 		i = 0;
@@ -141,8 +149,11 @@ void print_all(const char * const format, ...)
 		 * Tengo que setear la 'i' (mi primer variable contador que defini) en cero aca dentro del
 		 * primer while ya que siempre que este por arrancar el segundo while voy a querer que esta
 		 * 'i' empiece en cero para que pueda recorrer toda la estructura symbol que cree, ya que cada
-		 * vez que el primer while hace una iteracion tengo que chequear la segunda letra para ver
-		 * si es uno de los simbolos que defini en symbol y poder indicarle la funcion correspondiente.
+		 * vez que el primer while hace una iteracion tengo que chequear el segundo caracter para ver
+		 * si es uno de los formatos que defini en symbol y poder indicarle la funcion correspondiente.
+		 * Se hace de esta manera porque cada vez que se entra en el segundo while se tiene que setear el
+		 * contador usado (en este caso 'i') en 0 para que pueda recorrer toda la estructura para cada
+		 * caracter del string pasado en 'format'.
 		 * Ejemplo, en el 3-main.c pasan dentro de lo que seria el argumento 'format' = "ceis"
 		 * En la primer iteracion del primer while se chequea la 'c' y en el segund while se chequea
 		 * si la 'c' esta dentro de symbol y como la 'i' va incrementando para chequear si la 'c' esta o no
@@ -182,7 +193,7 @@ void print_all(const char * const format, ...)
 		}
 		ii++;
 	}
-	va_end(list);/* Necesario para liberar lo que habiamos inicalizado con va_start y usado */
+	va_end(list);/* Necesario para liberar lo que habiamos inicalizado con va_start (la lista: list) */
 	printf("\n");
 }
 
