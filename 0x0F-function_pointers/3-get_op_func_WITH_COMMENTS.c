@@ -10,9 +10,13 @@
 
 int (*get_op_func(char *s))(int a, int b)
 /**
- * Se hace una funcion 'pointer function' que tiene como argumento un puntero a char llamado 's' y recibe
- * dos argumentos de tipo int, llamados 'a' y 'b'.
- */*
+ * Se hace una funcion 'pointer function' que se llama: 'get_op_func' que toma como argumento un puntero a char
+ * llamado 's' y retorna un puntero a una funcion que recibe dos argumentos de tipo int(a y b) y devuelve un int.
+ * En este caso 's' seria el signo que elegis (de la estrutura 'ops') para hacer la operacion 
+ * matematica que quieras (dentro de las permitidas - las que estan definidas en la estructura) con ese argumento
+ * 's'que se pase se va a apuntar a la funcion correspondiente y todas estas funciones definidas en "3-calc.c" toman
+ * dos argumentos de tipo int (para poder hacer las cuentas) y retorna un int (es el resultado de la cuenta).
+ */
 {
 	op_t ops[] = {
 		{"+", op_add},
