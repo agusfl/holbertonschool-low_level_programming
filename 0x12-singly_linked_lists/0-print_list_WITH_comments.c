@@ -50,3 +50,8 @@ size_t print_list(const list_t *h)
 	}
 	return (cont_nodes);/* Retorna la cantidad de nodos impresos */
 }
+
+/**
+ * El h = h->next lo podriamos poner directamente una sola vez por fuera del else (despues de "cont_nodes") y 
+ * quedaba bien tmb usandolo solo una vez.
+ */
