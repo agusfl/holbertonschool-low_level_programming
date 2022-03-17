@@ -3,7 +3,7 @@
 /**
  * print_list - prints all the elements of a list of our created 
  * structure: list_t
- * @h: list of type list_t
+ * @h: linked list
  * Return: numbers of nodes
  */
 
