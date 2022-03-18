@@ -27,6 +27,7 @@ This repository contains programs written for the **low-level** programming and 
 * [0x0E - Structures, typedef](./0x0E-structures_typedef)
 * [0x0F - Function pointers](./0x0F-function_pointers)
 * [0x10 - Variadic functions](./0x10-variadic_functions)
+* [0x12 - Sinlgy Linked Lists](./0x12-singly_linked_lists)
 
 ## Authors :pen:
 
