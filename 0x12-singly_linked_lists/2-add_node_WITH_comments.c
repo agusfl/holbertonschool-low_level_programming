@@ -51,8 +51,8 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	new_node = malloc(sizeof(list_t));
-	/* Le asignamos memoria (dinamica) al nuevo nodo con malloc y el sizeof del tipo liat_t ya que
-	 * va a ser del mismo tipo que head.
+	/* Le asignamos memoria (dinamica) al nuevo nodo con malloc y el sizeof del tipo list_t ya que
+	 * va a ser del mismo tipo que la linked list.
 	 */
 
 	if (new_node == NULL)
@@ -77,13 +77,15 @@ list_t *add_node(list_t **head, const char *str)
 	 * de _strlen para ver el largo que nos pasen en "str".
 	 */
 	new_node->next = *head;
-	/* Le indicamos al miembro "next" de nuestra estructura que se iguale al puntero head */
+	/* Le indicamos al miembro "next" de nuestra estructura para el nuevo node que se iguale al puntero head. 
+	 * Esto lo hacemos para linkear al nuevo nodo con toda la lista que se tenia y a la cual apuntaba el
+	 * puntero "head", tenemos que hacerlo de esta forma porque si en lugar de hacerlo asi, apuntaramos
+	 * primero al puntero "head" al nuevo nodo esto haria que se perdiera toda la linked list ya que se perderia
+	 * la referencia que nos daba el puntero head de la lista linkeada.*/
 	*head = new_node;
-	/* Apuntamos head al puntero "new_node" que creamos mas arriba, esto lo que hace es siempre
-	 * apuntar "head" al ultimo nodo creado y ponerlo al principio, osea se crea un nodo y se lo
-	 * agrega la principio de la linked list, ya que se apunta head (que es el principio de la linked
-	 * list) al nuevo nodo creado. Entonces cada vez que se va creando un nodo termina siendo agregado al
-	 * principio de la linked list.
+	/* Apuntamos head al puntero "new_node" que creamos mas arriba, para que ahora "head" vuevla a apuntar al
+	 * principio de la lista, que paso a ser el nuevo nodo agregado (y este nuevo nodo posee toda la lista que
+	 * se tenia).
 	 */
 
 	return (new_node); /* Por ultimo se indica que se retorne el nuevo nodo creado */
