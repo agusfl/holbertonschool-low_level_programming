@@ -19,4 +19,8 @@ size_t print_listint(const listint_t *h)
 		cont_nodes++;
 	}
 	return (cont_nodes);
+	/**
+	 * Es un ejercicio muy similar al 0 del project 0x12, cualquier cosa
+	 * ver comentarios ahi.
+	 */
 }
