@@ -22,4 +22,8 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	*head = new_node;
 
 	return (new_node);
+	/**
+	 * Muy similar al ej 2 del project 0x12 a diferencia de que aca es con
+	 * un int y no con un string.
+	 */
 }
