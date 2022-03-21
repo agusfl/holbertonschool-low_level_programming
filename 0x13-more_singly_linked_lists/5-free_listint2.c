@@ -28,6 +28,8 @@ void free_listint2(listint_t **head)
 	 * puntero (*head) lo dereferenciamos para que quede en NULL una vez
 	 * que es liberado. Cuando se llega al ultimo elemento de la lista que
 	 * se pase "tmp->next" va a ser igul a NULL por lo tanto
-	 * dereferenciamos "head" para que quede seteado en NULL.
+	 * dereferenciamos "head" para que quede seteado en NULL y no se
+	 * vuelve a entrar al while ya que head seria igual a NULL, entonces
+	 * no se cumple la condicion para entrar en el while.
 	 */
 }
