@@ -15,7 +15,6 @@ void free_listint(listint_t *head)
 		head = head->next;
 		free(tmp);
 	}
-	return;
 	/**
 	 * Este ej es distinto al 4 del project 0x12, en este caso estamos
 	 * liberando una lista con integers y hay que hacerlo de esta forma
