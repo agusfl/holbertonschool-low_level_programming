@@ -24,6 +24,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 }
 
 /**
+ * Primero que nada se define una funcion llamada get_nodeint_at_index que retorna un puntero a una listint_t y
+ * toma como argumentos un puntero a una listint_t y una variable "index" de tipo unsigned int.
  * Creo una variable para contar las iteraciones que se hagan en el caso de que cont no sea igual al index
  * que se esta buscando, la creo con el tipo unsigned int para que tenga el mismo tipo que el argumento "index"
  * y asi no tener problemas al momento de compararlas.
