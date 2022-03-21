@@ -15,7 +15,7 @@ int pop_listint(listint_t **head)
 	{
 		return (0);
 	}
-	else 
+	else
 	{
 		tmp = *head;
 		retValue = tmp->n;
