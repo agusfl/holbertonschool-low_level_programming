@@ -10,7 +10,7 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *slow_ptr = head;
 	listint_t *fast_ptr = head;
- 
+
 	while (slow_ptr && fast_ptr && fast_ptr->next)
 	{
 	slow_ptr = slow_ptr->next;
@@ -20,5 +20,5 @@ listint_t *find_listint_loop(listint_t *head)
 		return (NULL);
 	}
 	}
-	return (slow_ptr);
+	return (head);
 }
