@@ -15,10 +15,10 @@ listint_t *find_listint_loop(listint_t *head)
 	{
 	slow_ptr = slow_ptr->next;
 	fast_ptr = fast_ptr->next->next;
-	if (slow_ptr == fast_ptr)
-	{
-		return (NULL);
+		if (slow_ptr == fast_ptr)
+		{
+			return (NULL);
+		}
 	}
-	}
-	return (head);
+	return (*head);
 }
