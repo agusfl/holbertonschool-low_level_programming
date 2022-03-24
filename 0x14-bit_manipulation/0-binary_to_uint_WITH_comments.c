@@ -38,6 +38,12 @@ unsigned int binary_to_uint(const char *b)
 	 * "len" es donde guardamos el tamanio del string que nos pasen usando la funcion que creamos mas arriba. */
 	int i;
 	/* Se declara una variable "i" que se va a utilizar para iterar por el string que se nos pasa. */
+	if (b == NULL)
+	{
+		return (0);
+	/* Evaluamos el caso de si b es NULL, en dicho caso que retorne 0 tal cual lo indica la letra. */
+	}
+
 	len = _strlen(b);
 	/* Le asignamos a "len" el largo del string pasado. */
 
