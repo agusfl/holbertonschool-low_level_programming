@@ -25,8 +25,8 @@ unsigned int _strlen(const char *str)
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int x2 = 1, conv_val = 0, len;
-	int i;
+	unsigned int x2 = 1, conv_val = 0;
+	int len;
 
 	len = _strlen(b);
 	len -= 1;
@@ -36,17 +36,18 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 	}
 
-	for (i = len; i >= 0; i--)
+	while (len >= 0)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[len] != '0' && b[len] != '1')
 		{
 			return (0);
 		}
-		if (b[i] == '1')
+		if (b[len] == '1')
 		{
 			conv_val += x2;
 		}
 		x2 *= 2;
+		len--;
 	}
 	return (conv_val);
 }
