@@ -83,4 +83,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	abierto). */
 	return (read_count); /* Se nos pide que se retorne la cantidad de letras (bytes) leidas, para eso
 				retornamos nuestra variable creada para contar la cantidad de bytes leidos. */
+
+	/* Para ejecutar el programa hay que poner ./a Requiescat --> esto es asi porque 'a' es como lalmamos a
+	 * nuestro ejecutable cuando compilamos y Requiescat es el archivo de texto que habiamos creado y queremos
+	 * leer con nuestra funcion. */
 }
