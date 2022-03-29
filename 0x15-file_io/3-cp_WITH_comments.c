@@ -83,7 +83,20 @@ int main(int argc, char *argv[])
 	 * primer argumento el file descriptor del cual se quiere leer la informacion (en este caso seria el primer
 	 * archivo que se pase, que es el que tiene el contenido que se quiere copiar al archivo de "file_to"), como
 	 * segundo argumento se le pasa el "buffer" que es donde se van almacenar los bytes (de chars) leidos y
-	 * por ultimo se le dice el maximo de bytes que se quieren leer. */
+	 * por ultimo se le dice el maximo de bytes que se quieren leer.
+	 * Tenemos que hacer un while para que se fije si "read_var" leyo algun byte osea es distinto de 0 (tmb se
+	 * podria poner si es mayor que 0) ya que queremos escribir en el "file_to" con la system call "write"
+	 * siempre y cuando haya algo que leer del "file_from". La system call "read" si salio todo bien retorna
+	 * el numero de bytes leidos, por lo tanto se entra en el while la primera vez y se va a retornar la cantidad
+	 * de bytes leidos en el archivo creado "incitatous" (el "file_from") y como este tenia menos de 1024 bytes
+	 * la proxima vez que se vuelva a preguntar si "read_var" es distinto de 0 para ver si se entra o no al while
+	 * la respuesta va a ser no ya que van a ser iguales porque el buffer va a estar en 0 y no va a quedar nada
+	 * por leer del "file_from" porque ya se leyo todo por lo tanto va a retornar 0 y no se va a entrar nuevamente
+	 * al while.
+	 * Si ponia el: read_var = read(file_from, buffer, 1024) antes del while y despues en la condicion del while
+	 * ponia: read_var != 0 --> quedaba en un loop infinito ya que la condicion siempre iba a ser verdadera
+	 * porque el valor que tenia read_var era el retorno de la cantidad de bytes que leyo la primera vez del
+	 * arhchivo "incitatous" y por lo tanto nunca se salia del while.*/
 	 *
 	{
 		if (read_var == -1)
@@ -97,7 +110,8 @@ int main(int argc, char *argv[])
 	/* Aca estamos asignando donde se quiere escribir (con la system call "write"), al igual que read el primer
 	 * argumento es el file descriptor (nos indica en este caso el archivo donde vamos querer escribir el texto
 	 * a copiar), el segundo es un buffer que almacena los bytes (de letras) que van a ser escritos en el "file_to"
-	 * y por ultimo la cantidad maxima de bytes que se van a escribir. */
+	 * y por ultimo la cantidad maxima de bytes que se van a escribir (que esta almacenado en el retorno de
+	 * "read_var"). */
 		if (write_var == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
