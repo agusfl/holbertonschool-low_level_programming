@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - checks for lowercase character
- * @n: character to check
- * Return: n lines _
+ * print_diagonal - draws a diagonal line on the terminal
+ * @n: number of caracters to print on the terminal
  */
 
 void print_diagonal(int n)
