@@ -1,4 +1,4 @@
-# Variables - if - else - while
+# Functions - nested loops
 
 Learning objectives:
 
