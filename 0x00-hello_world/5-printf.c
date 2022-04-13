@@ -1,9 +1,8 @@
-"include <stdio.h>
+#include <stdio.h>
 
 /**
- *main - print a message with printf
- *
- *Return: end program
+ * main - print a message with printf
+ * Return: 0 on success
  */
 int main(void)
 {
