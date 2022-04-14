@@ -28,8 +28,7 @@ Learning objectives:
  |7-print_chessboard.c |Function that prints the chessboard.
  |8-print_diagsums.c |Function that prints the sum of the diagonals of a square matrix of integers.
  |100-set_string.c |Function that sets the value of a pointer to a char.
- |101-crackme_password.c |Create a file that contains the password for the crackme
- executable.
+ |101-crackme_password.c |Create a file that contains the password for the crackme executable.
 ## Authors :pen:
 
  * [Agustin Flom](https://www.linkedin.com/in/agustin-f/)
