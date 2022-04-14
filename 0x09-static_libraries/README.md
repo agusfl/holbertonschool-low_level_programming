@@ -20,7 +20,7 @@ Learning objectives:
  |main.h | prototypes of functions and libraries used.
  |libmy.a |Static libray made with functions in: "functions for libmy"
  |create_static_lib.sh |Bash script to create a static library.
- |2-functions_for_libmy|C functions for the static library.
+ |functions_for_libmy|C functions for the static library.
 
 ## Authors :pen:
 
