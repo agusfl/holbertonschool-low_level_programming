@@ -17,7 +17,7 @@ Learning objectives:
 
 | Files          |Desription
 |:----------------|:-------------------------------:|
-|.h |Hold prototypes of functions, libraries headers and struct used.
+|lists.h |Hold prototypes of functions, libraries headers and struct used.
 | |
 | |
 | |
