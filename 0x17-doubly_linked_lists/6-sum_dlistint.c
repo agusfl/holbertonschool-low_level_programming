@@ -4,6 +4,7 @@
  * sum_dlistint - returns the sum of all the data(n) of a linked list.
  * @head: Pointer to the beginning of the list.
  * Return: the sum of all the data of a linked list or 0 if it is empty.
+ * Es igual al ejercicio 8 del project 0x13 (singly linked list).
  */
 
 int sum_dlistint(dlistint_t *head)
