@@ -18,11 +18,11 @@ Learning objectives:
 
 | Files          |Desription
 |:----------------|:-------------------------------:|
-| |
-| |
-| |
-| |
-| |
+|libdynamic.so, main.h |Dynamic library and header file with all the prototypes of the used functions.
+|functions_for_libdynamic |Folder with all the .c (source code) files used for the `dynamic` library.
+|object_functions_for_libdynamic |Folder with all the .o (object files) of the functions used for the `dynamic` library.
+|1-create_dynamic_lib.sh |Bash script to create a dynamic library called `liball.so` from all the .c files that are in the current directory.
+|100-operations.so, 100-tests.py |`100-operations.so` is a dynamic library and 100-tests.py is Python file that uses a C dynamic library.
 
 ## Authors :pen:
 
