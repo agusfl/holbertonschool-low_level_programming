@@ -31,6 +31,8 @@ This repository contains programs written for the **low-level** programming and 
 * [0x13 - More Singly Linked Lists](./0x13-more_singly_linked_lists)
 * [0x14 - Bit manipulation](./0x14-bit_manipulation)
 * [0x15 - File I/O](./0x15-file_io)
+* [0x17 - Doubly linked lists](./0x17-doubly_linked_lists)
+* [0x18 - Dynamic Libraries](./0x18-dynamic_libraries)
 
 ## Authors :pen:
 
