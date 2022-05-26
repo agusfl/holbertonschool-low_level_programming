@@ -20,5 +20,9 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 	return (index % size); 
 	/* Por ultimo retornamos el modulo del index (que seria el valor de la hash function (djb2)) y el size
 	 * La mayoria de hash functions funcionan de esta manera, para saber el indice se hace el modulo del
-	 * valor de la key entre la cantidad de elementos que tenga el array (size).*/
+	 * valor de la key entre la cantidad de elementos que tenga el array (size).
+	 * En el 2-main.c se puede ver que el tamaño (size) que va a tener el array es: 1024, por lo tanto
+	 * se hace el modulo del valor que quieras saber el indice entre 1024 (size).
+	 * Ejemplo en el primer elemento que se pasa para agregar a la hash table seria: s = "cisfun"
+	 * Este elemento va a tener un valor de: 6953392314605 y lo vamos a encontrar en el indice: 237 del array */
 }
