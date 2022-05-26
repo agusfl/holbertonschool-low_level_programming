@@ -20,7 +20,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	 * por lo tanto retornamos 0 tal cual nos indica la letra. */
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
-	/* Utilizo la funcion para obtener la key que hicimos en la task 2 */
+	/* Utilizo la funcion para obtener la key que hicimos en la task 2.
+	 * La casteamos a puntero a unsigned char tal cual hacen en el main del 2.
+	 * Y como segundo argumento le pasamos el size de la hash table que nos pasen como
+	 * primer argumento en esta funcion. */
 	index = key_index((unsigned char *)key, ht->size);
 
 	/* Se le otorga memoria al nuevo nodo que se quiera agregar, va a ser de tamaño hash_node_t
