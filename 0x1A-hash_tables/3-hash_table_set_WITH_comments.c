@@ -43,7 +43,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	 * un nodo existente. Para saber si el nodo existe lo que hacemos es comparar la key de
 	 * search_nod con la "key" del argumento. */
 	search_nod = ht->array[index];
-
+	
+	/* En el while siguiente la condicion es sobre search_nod y no la hash table porque queremos
+	 * buscar dentro de la linked list que esta en search_nod y ya tenemos la posicion (index) de
+	 * search_nod (lo sacamos con la linea de codigo de mas arriba). Buscamos sobre la linked list
+	 * que esta en search_nod porque seria para actualizar un valor que ya existe y se encuentra
+	 * en el nodo: search_nod */
 	while (search_nod != NULL)
 	{
 	/* Se hace un if para ver que si la "key" que se pasa ya existe, ya que si la key de search_nod
