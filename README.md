@@ -33,6 +33,7 @@ This repository contains programs written for the **low-level** programming and 
 * [0x15 - File I/O](./0x15-file_io)
 * [0x17 - Doubly linked lists](./0x17-doubly_linked_lists)
 * [0x18 - Dynamic Libraries](./0x18-dynamic_libraries)
+* [0x1A - Hash Tables](./0x1A-hash_tables)
 
 ## Authors :pen:
 
