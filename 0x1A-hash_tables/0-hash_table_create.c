@@ -8,7 +8,7 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned int i = 0;
+	unsigned long int i = 0; /* mismo tipo que la estructura hash_table_s*/
 	hash_table_t *hash_t = NULL;
 
 	hash_t = malloc(sizeof(hash_table_t));
@@ -20,8 +20,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/*Le asignamos el size pasado como argumento al elemento size de la struct*/
 
 	/* Si el size es 0 no hay array para crear */
-        if (size == 0)
-                return (NULL);
+	if (size == 0)
+		return (NULL);
 	hash_t->size = size;
 
 	if (hash_t->array == NULL)
