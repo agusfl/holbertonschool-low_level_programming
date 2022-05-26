@@ -18,11 +18,11 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/*Le asignamos memoria al array para los hash_node_t*/
 	hash_t->array = malloc(size * sizeof(hash_node_t *));
 	/*Le asignamos el size pasado como argumento al elemento size de la struct*/
-	hash_t->size = size;
 
 	/* Si el size es 0 no hay array para crear */
-	if (size == 0)
-		return (NULL);
+        if (size == 0)
+                return (NULL);
+	hash_t->size = size;
 
 	if (hash_t->array == NULL)
 	{
