@@ -20,17 +20,19 @@ void hash_table_print(const hash_table_t *ht)
 	 * ya que queremos recorrer la cantidad de nodos que haya en la hash table. */
 	while (i < ht->size)
 	{
-		/* Le asignamos al nodo los valores que esten en el elemento "array" de la hash table(ht)*/
+		/* Le asignamos al nodo los valores que esten en el elemento "array" en la posicion 'i'
+		 * de la hash table(ht)*/
 		node = ht->array[i];
+
 		/* El proximo while es para recorrer todos los nodos que esten en el array de la
-		 * hash table e ir imprimiendolos de la forma que nos muestran en el ejemplo en la letra */
-		while (node != NULL)
+		 * hash table e ir imprimiendolos de la forma que nos muestran en el ejemplo en la letra */		  while (node != NULL)
 		{
 			printf("%s'%s': '%s'", print_comma, node->key, node->value);
 			print_comma = ", ";
 			node = node->next; /* iteramos por el array */
 		}
-		i++; /* Se itera por la hash table por la cantidad de "size" */
+		i++; /* Se itera por la hash table por la cantidad de "size" y para que "node" vaya
+		cambiando para la posicion en la que se encuentre 'i'. */
 	}
 	printf("}\n"); /* Se imprime la llave final y un salto de linea */
 }
