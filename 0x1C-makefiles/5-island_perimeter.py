@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''
 Island perimeter exercise
-Info: https://shareablecode.com/snippets/island-perimeter-python-solution-leetcode-HiU3-QjYc
-Explained info: https://leetcode.com/problems/island-perimeter/ 
+Info: https://shareablecode.com/snippets/island-perimeter-python-solution-
+leetcode-HiU3-QjYc
+Explained info: https://leetcode.com/problems/island-perimeter/
 '''
 
 
