@@ -1,0 +1,5 @@
+all: #aca se podria poner los archivos que queremos que se compilen (los dependants) o podemos no poner nada como
+	# en este caso y va a tomar todos los archivos que hayan en la carpeta que se esta parado.
+	# En nuestro caso tenemos los archivos: m.h - main.c y school.c
+	gcc main.c school.c -o school
+	# En esta segunda linea de codigo indicamos el comando que queremos que se ejecute.
