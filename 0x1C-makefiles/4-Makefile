@@ -1,0 +1,16 @@
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM = rm -f # rule to delete files
+CFLAGS = -Wall -Werror -Wextra -pedantic # flags for compilation
+
+all: $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME) # delete temporary files
+oclean:
+	$(RM) $(OBJ) # delete object files
+fclean: clean oclean # use of rules --> clean and oclean. Deletes temporary files and object files with this rule.
+re: oclean all # force recompilation of all source files.
