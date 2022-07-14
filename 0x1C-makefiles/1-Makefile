@@ -1,0 +1,4 @@
+CC=gcc # set variable CC for later use in the command to execute
+SRC=main.c school.c # set variable SRC for later use
+all:
+	$(CC) $(SRC) -o school
