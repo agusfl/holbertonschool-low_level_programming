@@ -6,8 +6,8 @@
  * @array: pointer to the first element of the array to search in
  * @size: Size of the array.
  * @value: is the value to search
- * Return: Pointer to the newly created hash table.
- */
+ * Return: Index of the searched value in the array.
+*/
 
 int linear_search(int *array, size_t size, int value)
 {
