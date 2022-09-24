@@ -34,6 +34,8 @@ This repository contains programs written for the **low-level** programming and 
 * [0x17 - Doubly linked lists](./0x17-doubly_linked_lists)
 * [0x18 - Dynamic Libraries](./0x18-dynamic_libraries)
 * [0x1A - Hash Tables](./0x1A-hash_tables)
+* [0x1C - Makefiles](./0x1C-makefiles)
+* [0x1E - Search Algorithms](./0x1E-search_algorithms)
 
 ## Authors :pen:
 
